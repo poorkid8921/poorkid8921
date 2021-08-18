@@ -1,0 +1,3 @@
+- 👋 Hi, I’m @poorkid8921
+- 👩🏿‍💻 Im a developer in c++
+- Discord: Putin#6922
