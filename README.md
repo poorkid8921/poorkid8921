@@ -1,3 +1,2 @@
 - 👋 Hi, I’m @poorkid8921
-- 👩🏿‍💻 Im a developer in c++
-- Discord: Floop#1377
+- Discord: Christmas cat#0141
