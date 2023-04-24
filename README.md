@@ -1,2 +1,2 @@
 - 👋 Hi, I’m @poorkid8921
-- Discord: Christmas cat#0141
+- Discord: 2k2Cat#4905
