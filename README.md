@@ -1,2 +1,2 @@
 - 👋 Hi, I’m @poorkid8921
-- Discord: 2k2Cat#
+- Discord: 2k2Cat
