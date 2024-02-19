@@ -51,17 +51,17 @@ Red_Error() {
 Install_Node() {
   echo_cyan_n "[+] Install Node.JS environment... "
 
-  sudo rm -irf "$node_install_path"
+  rm -irf "$node_install_path"
 
   cd /opt || exit
 
-  sudo rm -rf  node-"$node"-linux-"$arch".tar.gz
+  rm -rf  node-"$node"-linux-"$arch".tar.gz
 
   sudo wget https://nodejs.org/dist/"$node"/node-"$node"-linux-"$arch".tar.gz
 
   sudo tar -zxf node-"$node"-linux-"$arch".tar.gz
 
-  sudo rm -rf node-"$node"-linux-"$arch".tar.gz
+  rm -rf node-"$node"-linux-"$arch".tar.gz
 
   if [[ -f "$node_install_path"/bin/node ]] && [[ "$("$node_install_path"/bin/node -v)" == "$node" ]]
   then
@@ -86,23 +86,23 @@ Install_MCSManager() {
   echo_cyan "[+] Install MCSManager..."
 
   # stop service
-  sudo systemctl stop mcsm-{web,daemon}
+  systemctl stop mcsm-{web,daemon}
 
   # delete service
-  sudo rm -rf /etc/systemd/system/mcsm-daemon.service
-  sudo rm -rf /etc/systemd/system/mcsm-web.service
-  sudo systemctl daemon-reload
+  rm -rf /etc/systemd/system/mcsm-daemon.service
+  rm -rf /etc/systemd/system/mcsm-web.service
+  systemctl daemon-reload
 
-  sudo mkdir -p ${mcsmanager_install_path} || exit
+  mkdir -p ${mcsmanager_install_path} || exit
 
   # cd /opt/mcsmanager
   cd ${mcsmanager_install_path} || exit
 
 
   # donwload MCSManager release
-  sudo wget ${mcsmanager_donwload_addr}
-  sudo tar -zxf mcsmanager_linux_release.tar.gz -o
-  sudo rm -rf "${mcsmanager_install_path}/mcsmanager_linux_release.tar.gz"
+  wget ${mcsmanager_donwload_addr}
+  tar -zxf mcsmanager_linux_release.tar.gz -o
+  rm -rf "${mcsmanager_install_path}/mcsmanager_linux_release.tar.gz"
   
   # echo "[→] cd daemon"
   cd daemon || exit
@@ -160,9 +160,9 @@ Environment=\"PATH=${PATH}\"
 WantedBy=multi-user.target
 " > /etc/systemd/system/mcsm-web.service
 
-  sudo systemctl daemon-reload
-  sudo systemctl enable mcsm-daemon.service --now
-  sudo systemctl enable mcsm-web.service --now
+  systemctl daemon-reload
+  systemctl enable mcsm-daemon.service --now
+  systemctl enable mcsm-web.service --now
 
   sleep 3
 
