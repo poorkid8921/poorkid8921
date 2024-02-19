@@ -96,7 +96,7 @@ Install_MCSManager() {
   sudo mkdir -p ${mcsmanager_install_path} || exit
 
   # cd /opt/mcsmanager
-  sudo cd ${mcsmanager_install_path} || exit
+  cd ${mcsmanager_install_path} || exit
 
 
   # donwload MCSManager release
@@ -105,7 +105,7 @@ Install_MCSManager() {
   sudo rm -rf "${mcsmanager_install_path}/mcsmanager_linux_release.tar.gz"
   
   # echo "[→] cd daemon"
-  sudo cd daemon || exit
+  cd daemon || exit
 
   echo_cyan "[+] Install MCSManager-Daemon dependencies..."
   /usr/bin/env "$node_install_path"/bin/node "$node_install_path"/bin/npm install --production > npm_install_log
